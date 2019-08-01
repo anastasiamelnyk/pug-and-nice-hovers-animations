@@ -1,7 +1,76 @@
 <!DOCTYPE html>
-<html lang="eng">
-  <head>
-    <title>Pug page</title>
+<html>
+  <head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="description" content="Our projects">
+    <title>Project</title>
+    <link rel="stylesheet" type="text/css" href="style/style.min.css">
+    <link rel="preload" href="fonts/proximanova-regular-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/proximanova-bold-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   </head>
-  <body></body>
+  <body>
+    <header></header>
+    <main class="container">
+      <h1 class="heading">Project</h1>
+      <section class="project-list">
+        <h2 class="visually-hidden">List of our projects</h2>
+        <dl class="project-list__list list"></dl>
+        <dt class="list__headline">
+          <label class="list__checkbox-label">
+            <input class="visually-hidden" type="checkbox" disabled><span class="list__checkbox list__checkbox--disabled"></span>
+          </label>
+          <p class="list__select-wrapper">
+            <select class="list__heading" aria-label="select project by number">
+              <option value="">#</option>
+            </select>
+          </p>
+          <p class="list__select-wrapper">
+            <select class="list__heading" aria-label="select project by client name">
+              <option value="">client</option>
+            </select>
+          </p>
+          <p class="list__select-wrapper">
+            <select class="list__heading" aria-label="select project by status">
+              <option value="">status</option>
+            </select>
+          </p>
+        </dt>
+                <dd class="list__item">
+                  <label class="list__checkbox-label">
+                    <input class="visually-hidden" type="checkbox" name="project # 1723"><span class="list__checkbox" aria-label="select a project"></span>
+                  </label>
+                  <div class="list__wrapper">
+                    <p class="list__grouper"><span class="list__label">#</span><span class="list__info list__info--num">project # 1723</span></p>
+                    <p class="list__grouper"><span class="list__label">client</span><span class="list__info list__info--client">Stella</span></p>
+                    <p class="list__grouper"><span class="list__label">status</span>
+                      <select class="list__info list__info--status">
+                        <option value="">Current status</option>
+                        <option value="draft">Draft</option>
+                        <option value="sent">Sent</option>
+                      </select>
+                    </p>
+                  </div>
+                </dd>
+                <dd class="list__item">
+                  <label class="list__checkbox-label">
+                    <input class="visually-hidden" type="checkbox" name="project # 1720"><span class="list__checkbox" aria-label="select a project"></span>
+                  </label>
+                  <div class="list__wrapper">
+                    <p class="list__grouper"><span class="list__label">#</span><span class="list__info list__info--num">project # 1720</span></p>
+                    <p class="list__grouper"><span class="list__label">client</span><span class="list__info list__info--client">IT corp international</span></p>
+                    <p class="list__grouper"><span class="list__label">status</span>
+                      <select class="list__info list__info--status">
+                        <option value="">Current status</option>
+                        <option value="draft">Draft</option>
+                        <option value="sent">Sent</option>
+                      </select>
+                    </p>
+                  </div>
+                </dd>
+      </section>
+    </main>
+    <footer>
+    </footer>
+  </body>
 </html>

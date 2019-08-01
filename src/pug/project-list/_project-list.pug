@@ -1,0 +1,44 @@
+-//mixin for items in projects list
+mixin listItems(projectInfo)
+  each item in projectInfo
+    dd.list__item
+      label.list__checkbox-label
+        input.visually-hidden(type='checkbox' name=item.projNum)
+        span.list__checkbox(aria-label='select a project')
+      div.list__wrapper
+        p.list__grouper
+          span.list__label #
+          span.list__info.list__info--num #{item.projNum}
+        p.list__grouper
+          span.list__label client
+          span.list__info.list__info--client #{item.clientName}
+        p.list__grouper
+          span.list__label status
+          select.list__info.list__info--status
+            option(value='') Current status
+            option(value='draft') Draft
+            option(value='sent') Sent
+
+
+
+-//projects list
+dl.project-list__list.list
+-//headline for projests list
+  dt.list__headline
+    label.list__checkbox-label
+      input.visually-hidden(type='checkbox' disabled)
+      span.list__checkbox.list__checkbox--disabled
+    p.list__select-wrapper
+      select.list__heading(aria-label='select project by number')
+        option(value='') #
+    p.list__select-wrapper
+      select.list__heading(aria-label='select project by client name')
+        option(value='') client
+    p.list__select-wrapper
+      select.list__heading(aria-label='select project by status')
+        option(value='') status
+
+  +listItems([
+  {'projNum': 'project # 1723', 'clientName': 'Stella'},
+  {'projNum': 'project # 1720', 'clientName': 'IT corp international'}
+  ])

@@ -1,0 +1,60 @@
+.list__checkbox-label{
+  position: relative;
+  padding-left: 50px;
+}
+
+.list__checkbox-label input[type="checkbox"]:focus ~ .list__checkbox{
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+}
+
+.list__checkbox-label input[type="checkbox"] ~ .list__checkbox{
+  position: absolute;
+  top: 3px;
+  left: 15px;
+  .square-box(20px);
+  border: 1px solid @border-colors[checkbox];
+  border-radius: 3px;
+  transition: background-color .3s, border-color .3s;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    transition: background-color .3s;
+  }
+  &::before {
+    top: 7px;
+    left: 5px;
+    height: 7px;
+    transform: rotate(-45deg);
+  }
+  &::after {
+    top: 4px;
+    left: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    border-color: transparent;
+    background-color: @bg-colors[checkbox];
+  }
+}
+
+.list__checkbox-label input[type="checkbox"]:checked ~ .list__checkbox {
+  border-color: transparent;
+  background-color: @bg-colors[checkbox-select];
+}
+
+.list__checkbox-label input[type="checkbox"]:checked ~ .list__checkbox::before,
+.list__checkbox-label input[type="checkbox"]:checked ~ .list__checkbox::after {
+  background-color: @bg-colors[white];
+}
+
+@media (min-width: @breaks[s]) {
+  .list__checkbox-label{
+    padding-left: 65px;
+  }
+}

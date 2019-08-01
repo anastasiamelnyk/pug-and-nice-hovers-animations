@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const less = require('gulp-less');
 const plumber = require ('gulp-plumber');
 const postCSS = require('gulp-postcss');
 const autopref = require('autoprefixer');
@@ -16,10 +16,10 @@ const clean = require('del');
 
 //style task
 gulp.task('style', () => {
-  return gulp.src('src/style/style.scss')
+  return gulp.src('src/style/style.less')
   .pipe(plumber())
   .pipe(maps.init())
-  .pipe(sass())
+  .pipe(less())
   .pipe(postCSS([
     autopref(),
     postcssNorm()
@@ -35,7 +35,7 @@ gulp.task('style', () => {
 
 //image tasks
 gulp.task('minImg', () => {
-  return gulp.src('src/images/*.{png,jpg,svg}')
+  return gulp.src('src/imgs/*.{png,jpg,svg}')
   .pipe(img([
     img.optipng({optimizationLevel: 3}),
     img.jpegtran({progressive: true}),
@@ -82,11 +82,13 @@ gulp.task('copy', () => {
 });
 
 gulp.task('prod', gulp.series(
-  'cleanProd', gulp.parallel(
+  'cleanProd',
+  gulp.parallel(
     'copy',
     'style',
     'html',
-    'minImg')));
+    'minImg'
+    )));
 
 
 //live watching
@@ -94,7 +96,6 @@ gulp.task('default', gulp.series('prod', () => {
   sync.init({
     server: 'prod'
   });
-  gulp.watch('src/style/**/*.scss', gulp.series('style'));
+  gulp.watch('src/style/**/*.less', gulp.series('style'));
   gulp.watch('src/pug/**/*.pug', gulp.series('html'));
-  gulp.watch('src/js/**.js', gulp.series('js'));
 }));

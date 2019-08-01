@@ -1,0 +1,110 @@
+//projects list
+.list { .resets.geometry-reset(); }
+
+//hide headline for small screens
+.list__headline { display: none; }
+
+//list items
+.list__item {
+  .resets.geometry-reset();
+  position: relative;
+  display: flex;
+  padding: 15px 0;
+  background-color: @bg-colors[list-item];
+  transition: background-color .3s, box-shadow .3s;
+  &:hover,
+  &:active {
+    z-index: 2;
+    background-color: @bg-colors[white];
+    box-shadow: 0 3px 2px 0 @shadows[dark], 0 -3px 2px 0 @shadows[light];
+  }
+}
+
+.list__grouper {
+  .resets.geometry-reset();
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.list__label {
+  color: @font-colors[light];
+  line-height: 14px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.list__info {
+  line-height: 20px;
+}
+
+.list__info--num { text-transform: uppercase; }
+
+.list__info--status {
+  .resets.select-reset();
+  min-width: 110px;
+  border-bottom: 2px solid @border-colors[select];
+  .select-arrow();
+  option {
+    color: @font-colors[light];
+    font-weight: 400;
+  }
+}
+
+
+@media (min-width: @breaks[s]) {
+  .list__grouper {
+    flex-direction: row;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .list__label {
+    min-width: 50px;
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: @breaks[m]) {
+  //showing headline for bigger screens
+  .list__headline {
+    display: flex;
+    padding: 11px 0;
+    background-color: @bg-colors[white];
+  }
+  .list__select-wrapper {
+    .resets.geometry-reset();
+    min-width: 200px;
+  }
+  .list__heading {
+    .resets.select-reset();
+    padding-right: 15px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    .select-arrow();
+  }
+  .list__item {
+    padding: 12px 0;
+    &:hover .list__info,
+    &:active .list__info { color: @font-colors[dark]; }
+  }
+  .list__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .list__grouper {
+    min-width: 200px;
+    margin-bottom: 0;
+  }
+  .list__label { display: none; }
+  .list__info {
+    line-height: 24px;
+    color: @font-colors[light];
+    transition: color .3s;
+  }
+}
+
+@media (min-width: @breaks[l]) {
+  .list__select-wrapper,
+  .list__grouper { min-width: 280px; }
+}

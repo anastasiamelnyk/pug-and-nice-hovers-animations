@@ -1,0 +1,87 @@
+.resets() {
+  .geometry-reset() {
+    margin: 0;
+    padding: 0;
+  }
+  .text-reset() {
+    font-weight: normal;
+  }
+  .button-reset() {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .select-reset() {
+    border: 0;
+    font: inherit;
+    appearance: none;
+    background-color: transparent;
+  }
+}
+
+.select-arrow() {
+  background-image: url('../images/select-arrow.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.centering() {
+  .abs-centering-xy() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .abs-centering-x() {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .flex-centering() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.flex-justifying() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.square-box(@size) {
+  width: @size;
+  height: @size;
+}
+
+
+
+
+
+
+
+//make smth like this for boxes icons
+.about-icons (@n) when (@n > 0) {
+  .about-icons ((@n - 1));
+  &:nth-child(@{n})::before {
+    background-image: url('../../images/about-icon-@{n}.webp');
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url('../../images/about-icon-@{n}-2x.webp');
+    }
+    .no-webp & {
+      background-image: url('../../images/about-icon-@{n}.png');
+      @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        background-image: url('../../images/about-icon-@{n}-2x.png');
+      }
+    }
+  }
+}
+
+.about-numbers (@n) when (@n > 0) {
+  .about-numbers ((@n - 1));
+  &:nth-child(@{n})::after {
+    content: '@{n}';
+  }
+}
