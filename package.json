@@ -1,0 +1,36 @@
+{
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anastasiia Shlapachenko",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "postcss-normalize": "^8.0.1"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 0.2%",
+    "not dead",
+    "ie >= 10"
+  ],
+  "dependencies": {
+    "@csstools/normalize.css": "^10.1.0"
+  }
+}
