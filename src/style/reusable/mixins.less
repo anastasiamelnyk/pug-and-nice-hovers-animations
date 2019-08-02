@@ -26,6 +26,42 @@
   background-repeat: no-repeat;
 }
 
+.square-box(@size) {
+  width: @size;
+  height: @size;
+}
+
+//icons in project boxes
+.project-box-icons(@n) when (@n > 0) {
+  .project-box-icons((@n - 1));
+  &:nth-of-type(@{n}) .box__heading::before {
+    background-image: url('../images/project-box-icon-@{n}.svg');
+  }
+}
+
+//animation duration for project boxes appearing
+.animation-dur (@n) when (@n > 0) {
+  .animation-dur((@n - 1));
+  &:nth-of-type(@{n}) {
+    animation-duration: ((@n * 1s) - .5);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//never used
 .centering() {
   .abs-centering-xy() {
     position: absolute;
@@ -50,38 +86,4 @@
   justify-content: space-between;
   align-items: center;
 }
-
-.square-box(@size) {
-  width: @size;
-  height: @size;
-}
-
-
-
-
-
-
-
-//make smth like this for boxes icons
-.about-icons (@n) when (@n > 0) {
-  .about-icons ((@n - 1));
-  &:nth-child(@{n})::before {
-    background-image: url('../../images/about-icon-@{n}.webp');
-    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-      background-image: url('../../images/about-icon-@{n}-2x.webp');
-    }
-    .no-webp & {
-      background-image: url('../../images/about-icon-@{n}.png');
-      @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-        background-image: url('../../images/about-icon-@{n}-2x.png');
-      }
-    }
-  }
-}
-
-.about-numbers (@n) when (@n > 0) {
-  .about-numbers ((@n - 1));
-  &:nth-child(@{n})::after {
-    content: '@{n}';
-  }
-}
+//never used

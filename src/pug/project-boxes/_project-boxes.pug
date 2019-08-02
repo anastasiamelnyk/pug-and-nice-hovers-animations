@@ -1,0 +1,12 @@
+mixin projectBoxes(boxInfo)
+    each item in boxInfo
+      article.project-box__item.box.showing
+        h3.box__heading project # #{item.projectNum}
+        p.box__description #{item.projectDescr}
+
++projectBoxes([
+    {'projectNum': '1', 'projectDescr': 'Lorem ipsum dolor sit amet, consectetur'},
+    {'projectNum': '2', 'projectDescr': 'Lorem ipsum dolor sit amet, consectetur'},
+    {'projectNum': '3', 'projectDescr': 'Lorem ipsum dolor sit amet, consectetur'},
+    {'projectNum': '4', 'projectDescr': 'Lorem ipsum dolor sit amet, consectetur'}
+    ])
