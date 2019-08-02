@@ -1,0 +1,47 @@
+//geometrical placement for form's items
+.form__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  &:last-of-type { margin-bottom: 20px; }
+}
+
+.form__button {
+  width: 100%;
+  &:first-of-type { margin-bottom: 10px; }
+}
+
+@media (min-width: @breaks[s]) {
+  .form__button {
+    width: max-content;
+    &:first-of-type {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }a
+  }
+}
+
+@media (min-width: @breaks[m]) {
+  .form__label {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .form__input { width: 85%; }
+}
+
+@media (min-width: @breaks[l]) {
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .form__label {
+    flex-direction: column;
+    width: 366px;
+    margin-bottom: 20px;
+    &:last-of-type { margin-bottom: 20px; }
+    margin-right: 45px;
+    &:nth-of-type(2n) { margin-right: 0; }
+  }
+  .form__input { width: 100%; }
+  .form__button { margin-top: 15px; }
+}

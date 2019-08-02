@@ -1,0 +1,22 @@
+mixin formInputs(inputInfo)
+  each item in inputInfo
+    label.input__label.input__label--required.form__label #{item.inputName}
+      input.input.form__input(type=item.inputType name=item.inputName placeholder=item.inputPlaceholder required)
+
+
+form.project-form__form.form(action="#" method="POST")
+
+  +formInputs([
+  {'inputType': 'text', 'inputName': 'name', 'inputPlaceholder': 'project #1723'},
+  {'inputType': 'text', 'inputName': 'client', 'inputPlaceholder': 'project #1723'},
+  {'inputType': 'email', 'inputName': 'e-mail', 'inputPlaceholder': 'project1723@gmail.com'}
+  ])
+
+  label.input__label.input__label--required.form__label admin
+    select.input.input--select.form__input
+      option(value='') admin
+
+  button(type='reset').button.button--secondary.form__button cancel
+  button(type='submit').button.button--primary.form__button add
+
+

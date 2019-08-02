@@ -1,0 +1,54 @@
+.input__label {
+  color: @font-colors[light];
+  text-transform: capitalize;
+  transition: color .3s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: @font-colors[dark];
+    .input {
+      border-color: @border-colors[input-hover];
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
+
+.input__label--required {
+  position: relative;
+  &::before {
+    content: '*';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    color: @red-color;
+  }
+}
+
+//resets for inputs and select
+.input,
+.input--select { .resets.geometry-reset(); }
+.input { .resets.input-reset(); }
+.input--select { .resets.select-reset(); }
+
+.input {
+  border-bottom: 2px solid @border-colors[select];
+  cursor: pointer;
+  transition: border-color .3s;
+  &::placeholder {
+    color: @font-colors[dark];
+    opacity: 1;
+    text-transform: capitalize;
+    transition: color .3s;
+  }
+}
+
+.input--select {
+  .select-arrow();
+  text-transform: capitalize;
+  option {
+    color: @font-colors[light];
+  }
+}
+

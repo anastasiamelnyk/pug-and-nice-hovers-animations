@@ -88,6 +88,27 @@
                   <p class="box__description">Lorem ipsum dolor sit amet, consectetur</p>
                 </article>
       </section>
+      <section class="project-form">
+        <h2 class="project-form__heading">Add project</h2>
+        <form class="project-form__form form" action="#" method="POST">
+                  <label class="input__label input__label--required form__label">name
+                    <input class="input form__input" type="text" name="name" placeholder="project #1723" required>
+                  </label>
+                  <label class="input__label input__label--required form__label">client
+                    <input class="input form__input" type="text" name="client" placeholder="project #1723" required>
+                  </label>
+                  <label class="input__label input__label--required form__label">e-mail
+                    <input class="input form__input" type="email" name="e-mail" placeholder="project1723@gmail.com" required>
+                  </label>
+          <label class="input__label input__label--required form__label">admin
+            <select class="input input--select form__input">
+              <option value="">admin</option>
+            </select>
+          </label>
+          <button class="button button--secondary form__button form__button--reset" type="reset">cancel</button>
+          <button class="button button--primary form__button form__button--submit" type="submit">add</button>
+        </form>
+      </section>
     </main>
     <footer>
     </footer>

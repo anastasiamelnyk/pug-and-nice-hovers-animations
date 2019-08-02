@@ -1,8 +1,12 @@
+.project-box__item {
+  margin-bottom: 20px;
+  @media (min-width: @breaks[s]) { margin-left: 30px; }
+}
+
 .box {
   .project-box-icons(4);
   padding: 20px;
   background-color: @bg-colors[white];
-  margin-bottom: 20px;
   transition: transform .3s, box-shadow .3s;
   &:hover {
     transform: scale(1.1);
@@ -44,10 +48,7 @@
 }
 
 @media (min-width: @breaks[s]) {
-  .box {
-    margin-left: 30px;
-    width: 172px;
-  }
+  .box { width: 172px; }
   .box__heading {
     flex-direction: column;
     margin-bottom: 3px;
