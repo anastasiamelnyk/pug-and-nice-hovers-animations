@@ -2,7 +2,21 @@
   //remove ms select arrow
   select::-ms-expand { display: none; }
 
-  //fix project box icons' hover
+  //fix project box icons
+  .box__heading {
+    position: relative;
+    text-align: center;
+    padding-top: 45px;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @media (min-width: @breaks[s]) {
+      padding-top: 65px;
+    }
+  }
   .box:hover .box__heading::before {
     transform: translateX(-50%);
   }
