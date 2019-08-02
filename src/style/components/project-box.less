@@ -24,12 +24,16 @@
   line-height: 26px;
   font-weight: 800;
   text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+  padding-top: 45px;
   &::before {
     content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     .square-box(35px);
     background-position: center;
     background-size: contain;
@@ -51,6 +55,7 @@
   .box { width: 172px; }
   .box__heading {
     flex-direction: column;
+    padding-top: 65px;
     margin-bottom: 3px;
     &::before {
       .square-box(50px);
